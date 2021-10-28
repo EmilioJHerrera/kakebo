@@ -1,5 +1,5 @@
 import React,  {useState, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput,Picker, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const Presupuesto = ({datos}) => {
    
