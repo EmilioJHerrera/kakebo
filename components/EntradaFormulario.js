@@ -39,6 +39,7 @@ const EntradaFormulario = ({datos,setDatos}) => {
 
 
     const contruirNuevaEntrada = () => {
+     
         generateId();
         const nuevaEntrada = {
             id: id,
@@ -47,7 +48,7 @@ const EntradaFormulario = ({datos,setDatos}) => {
             ingreso: selectedValue
         };
         setDatos([...datos, nuevaEntrada]);
-        
+      
     }
     
     const handleSubmit = () => {
@@ -55,16 +56,16 @@ const EntradaFormulario = ({datos,setDatos}) => {
         contruirNuevaEntrada();
     }
     
-    return ( <View>
+    return ( <View style={styles.container}>
         <View>
-        <Text>Descripcion:</Text>
+        <Text style={styles.label}>Descripcion:</Text>
         <TextInput style={styles.input} placeholder="Ingrese descripcion"
         onChangeText={(text) => setDescripcion(text)}
         />
         </View>
 
         <View>
-        <Text>Cantidad:</Text>
+        <Text style={styles.label}>Cantidad:</Text>
         <TextInput style={styles.input} placeholder="Ingrese cantidad" 
         onChangeText={(text) => setCantidad(text)}
         keyboardType='numeric'/>
@@ -91,13 +92,28 @@ const EntradaFormulario = ({datos,setDatos}) => {
 }
 
 const styles = StyleSheet.create({
-    input: {},
+    container:{
+        marginHorizontal: '2.5%',
+        marginVertical: '2.5%',
+    },
+    input: {
+        fontSize: 16,
+        fontStyle: 'italic',
+    },
+    label:{
+        fontSize: 16,
+        fontWeight:'bold',
+    },
     buttonContainer: {
         padding: 10,
         backgroundColor: 'green',
         marginVertical: 10,
     },
-    buttonText: {},
+    buttonText: {
+        fontSize: 18,
+        color: '#FFA',
+        textAlign: 'center'
+    },
 });
  
 export default EntradaFormulario;
